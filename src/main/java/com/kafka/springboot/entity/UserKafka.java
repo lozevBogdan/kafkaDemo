@@ -1,6 +1,6 @@
 package com.kafka.springboot.entity;
 
-public class User {
+public class UserKafka {
 
     private Long id;
     private String firstName;

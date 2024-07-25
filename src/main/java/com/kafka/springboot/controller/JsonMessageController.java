@@ -1,6 +1,6 @@
 package com.kafka.springboot.controller;
 
-import com.kafka.springboot.entity.User;
+import com.kafka.springboot.entity.UserKafka;
 import com.kafka.springboot.kafka.JsonKafkaProducer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +19,7 @@ public class JsonMessageController {
     }
 
     @PostMapping("/publish")
-    public ResponseEntity<String> publish(@RequestBody User user){
+    public ResponseEntity<String> publish(@RequestBody UserKafka user){
         kafkaProducer.sendMessage(user);
         return ResponseEntity.ok("Json message sent to kafka topic");
     }
