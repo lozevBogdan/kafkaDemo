@@ -11,8 +11,10 @@ public class KafkaConsumer {
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaConsumer.class);
 
 
+    //here we listen for new messages in topic - "javaguides" from groupId = "myGroup".
+    // when some message is sent from producer in to kafka cluster topic, the consumer method below will listening about new messages from topic
     @KafkaListener(topics = "javaguides", groupId = "myGroup")
-    public void consume(String message){
+    public void consume(String message) {
 
         LOGGER.info(String.format("Message received -> %s", message));
 
